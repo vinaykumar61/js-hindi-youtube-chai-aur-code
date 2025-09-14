@@ -65,14 +65,43 @@
 
 ///////// 3. String Coversion      ////////
 
-let someNumber = 33
-let stringNumber = String(someNumber)
+// let someNumber = 33
+// let stringNumber = String(someNumber)
 
-console.log(typeof(someNumber),someNumber); //  number 33
-console.log(typeof(stringNumber),stringNumber); //  string 33
+// console.log(typeof(someNumber),someNumber); //  number 33
+// console.log(typeof(stringNumber),stringNumber); //  string 33
+
+
+// ***************** Operations **********************
+// let value = 3
+// let negValue = -value
+// console.log(negValue);
+
+// console.log(2+2);   // 4
+// console.log(2-2);   // 0
+// console.log(2*2);   // 2
+// console.log(2**2);  // 4
+// console.log(2**3);  // 8
+// console.log(2/3);   // 0.6666666666666666
+// console.log(2%3);   // 2
+
+// let str1 = "hello"
+// let str2 = " Vinay"
+// let str3 = str1 + str2
+// console.log(str3);  // hello Vinay
+
+
+// Complex Situations
+
+console.log("1" + 2);   // 12
+console.log(1 + "2");   // 12
+console.log("1" + "2"); // 12
+console.log("1" + 2 + 2);   // 122
 
 
 
+
+// ***************** Operations **********************
 
 
 // JavaScript Type Casting & Conversion function list
