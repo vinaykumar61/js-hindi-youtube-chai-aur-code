@@ -1,3 +1,5 @@
+// ****  Why string to number conversion is confusing  *****
+
 ///////// 1. Number Coversion      ////////
 
 // let score = 33
@@ -93,11 +95,45 @@
 
 // Complex Situations
 
-console.log("1" + 2);   // 12
-console.log(1 + "2");   // 12
-console.log("1" + "2"); // 12
-console.log("1" + 2 + 2);   // 122
+// console.log("1" + 2);   // 12
+// console.log(1 + "2");   // 12
+// console.log("1" + "2"); // 12
+// console.log("1" + 2 + 2);   // 122  not a good way use parenthesis console.log("1" +( 2 + 2));
+// console.log(1 + 2 + "2");   // 32   not a good way console.log((1 + 2) + "2");
 
+
+// console.log(3 + 4 * 5 * 3); //  63
+
+// Note 1 => if the string in starting conversion will not done
+
+// Note 2 => if the string in end conversion will done
+
+// Read tc39 documentation   
+// Link to study
+// https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-operations 
+
+// ****  Tricky Conversion ****
+
+console.log(true);  // true
+console.log(+true); // 1
+// console.log(true+);  // error
+console.log(+"");   // 0    no sense
+
+let num1, num2, num3;
+num1 = num2 = num3 = 2 + 2  // Not prefer
+num1 = num2 = num3 = 4  //  prefer
+
+
+let gameCounter = 100
+gameCounter++
+console.log("postfix",gameCounter);
+
+++gameCounter
+console.log("prefix",gameCounter);
+
+// Read prefix and postfix js mdn documentation
+// Link to study 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
 
 
 
