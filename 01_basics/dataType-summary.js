@@ -77,8 +77,50 @@ console.log(typeof(myFunction));  // function but called as function object
 
 console.log(typeof(anotherId));   //
 
-// Link to Study: tc39
+// Link to Study: https://262.ecma-international.org/5.1/#sec-11.4.3
 
 
+// ++++++++++++++++ How Memmory works in Javascript
+// +++++++++++
+
+// Two types of memory
+// 1.Stack Memory  2. Heap Memory
+
+
+
+// 1.Stack Memory => are used in Prmitive datatypes.
+                    // we get the copy of memory
+                    
+
+// 2.Heap Memory => are used in Non-Primitive datatypes
+                    // We get Reference of original value
+                    // change will be in original value
+
+
+// 1.Stack Memory: Examples =>
+let myYoutubeName = "hiteshchodharydotcom"
+
+let anotherName = myYoutubeName // we get the copy of variable will change in copy
+anotherName = "chaiaurcode"
+
+console.log("anotherName:",anotherName); // anotherName: chaiaurcode
+console.log("myYoutubeName:",myYoutubeName); // myYoutubeName: hiteshchodharydotcom
+
+
+// 2.Heap Memory: Examples =>
+let userOne = {
+    email: "user@google.com",
+    upi: "user@ybl"
+}
+
+let userTwo = userOne // will get the reference of userOne
+userTwo.email = "hitesh@google.com"
+
+console.log("userOne.email",userOne.email); // hitesh@google.com
+console.log("userTwo.email",userTwo.email); // hitesh@google.com
+
+
+// we access any value by .
+// will change in original object 
 
 
