@@ -40,7 +40,7 @@ const JsUser = {
     lastLoginDays: ["Monday", "Saturday"]
 }
 
-console.log("JsUser_Value",JsUser);
+// console.log("JsUser_Value",JsUser);
 // Ouput--
 // JsUser_Value {
 //   name: 'Vinay',
@@ -54,9 +54,9 @@ console.log("JsUser_Value",JsUser);
 // }
 
 // M.Imp. object ki value ko access karna and iske tarike 2 ways only [. and [] square brackets]
-console.log("JsUser.email",JsUser.email);    
+// console.log("JsUser.email",JsUser.email);    // vinay@google.com
 // console.log(JsUser[email]);  // will raise error  email is not defined because email ko as a variable treat kargea  
-console.log('JsUser["email"]',JsUser["email"]);
+// console.log('JsUser["email"]',JsUser["email"]); // vinay@google.com
 
 
 // Note: By default system key ko as a string process karta hai agar string m bhi nhi denge tab bhi name ko "name" consider karega
@@ -65,18 +65,19 @@ console.log('JsUser["email"]',JsUser["email"]);
 // console.log(JsUser.full name); We can not access by .
 // console.log(JsUser."full name"); We can not access by .
 // console.log(JsUser["full name"]);  // only access by []
-console.log("JsUser.mySym",JsUser.mySym);  // undefined
-console.log(typeof JsUser.mySym);  
-console.log("JsUser[mySym]",JsUser[mySym]);  // key1
-console.log(typeof JsUser[mySym]);  // string (datataype of value not key )
+
+// console.log("JsUser.mySym",JsUser.mySym);  // undefined
+// console.log(typeof JsUser.mySym);  // undefined
+// console.log("JsUser[mySym]",JsUser[mySym]);  // key1
+// console.log(typeof JsUser[mySym]);  // string (datataype of value not key )
 
 
 // to change value of object key
 JsUser.email ="hitesh@google.com"
-console.log("JsUser.email after change",JsUser.email);
-Object.freeze(JsUser)
-JsUser.email ="muddu@google.com"
-console.log("JsUser.email after 2nd time change",JsUser.email);
+// console.log("JsUser.email after change",JsUser.email); // hitesh@google.com
+// Object.freeze(JsUser)     // If freeze the object then you can't change any value
+// JsUser.email ="muddu@google.com"
+// console.log("JsUser.email after 2nd time change",JsUser.email);  // no changes
 
 
 /*
@@ -86,21 +87,62 @@ JsUser.email after 2nd time change hitesh@google.com
 */
 
 
+JsUser.greeting = function(){
+  console.log("Hello JS User");  
+}
+
+console.log(JsUser.greeting); // [Function (anonymous)]  
+console.log("asdasdasd",JsUser.greeting()); 
+// Output => 
+// Hello JS User
+// asdasdasd undefined
+
+// JsUser.greeting is not a function (due to uncomment object freeze)
+
+/*
+console.log("asdasdasd", JsUser.greeting());
+Here you call the function JsUser.greeting().
+Inside the function, you have:
+console.log("Hello JS User");
+This executes first, and prints:
+Hello JS User
+After that, the function has no return statement.
+In JavaScript, when a function doesn’t return anything, it implicitly returns undefined.
+So effectively:
+JsUser.greeting() === undefined
+
+That’s why your outer console.log prints:
+asdasdasd undefined
+Final Output Order = = = = =>
+
+[Function (anonymous)]
+Hello JS User
+asdasdasd undefined
+*/
+
+
 
 // M.Imp. Note =>
-console.log(JsUser.mySym);   // ❌ undefined
-console.log(JsUser[mySym]);  // ✅ "mykey1"
+// console.log(JsUser.mySym);   // ❌ undefined
+// console.log(JsUser[mySym]);  // ✅ "mykey1"
 // M.Imp. Note =>
 
 
+JsUser.greetingTwo = function(){
+  console.log(`Hello JS User, ${this.name}`); // hamare object ki sabhi value ko sabhi kar sakte hai 
+}
+
+console.log("BBBBBBBBB:",JsUser.greetingTwo());
+// Output-- Hello JS User, Vinay
+// BBBBBBBBB: undefined
 // ================== Symbol Practice =======================
 const mySym2 = Symbol("key2");
 
 const JsUser2 = {
   [mySym2]: "myKey2"   // Symbol as the key, string as the value
 };
-console.log(JsUser2[mySym2]); // myKey2
-console.log(typeof JsUser2[mySym2]); // string
+// console.log(JsUser2[mySym2]); // myKey2
+// console.log(typeof JsUser2[mySym2]); // string
 
 // => Here:
 
@@ -119,6 +161,6 @@ const JsUser3 = {
   [mySym3]: valSym3   // Symbol as the key, Symbol as the value
 };
 
-console.log(JsUser3[mySym3]);  // Symbol(val3)
-console.log(typeof JsUser3[mySym3]);  // "symbol"
+// console.log(JsUser3[mySym3]);  // Symbol(val3)
+// console.log(typeof JsUser3[mySym3]);  // "symbol"
 // ================== Symbol Practice =======================
