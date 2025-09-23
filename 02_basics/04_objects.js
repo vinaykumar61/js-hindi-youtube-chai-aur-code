@@ -148,6 +148,8 @@ console.log(instructor);    // hitesh
 ]
 
 //famous:   randomuserme api
+// json formatter tool to understand the json api--    https://jsonformatter.org/
+
 
 // How to use
 // You can use AJAX to call the Random User Generator API and will receive a randomly generated user in return. If you are using jQuery, you can use the $.ajax() function in the code snippet below to get started.
@@ -161,7 +163,7 @@ console.log(instructor);    // hitesh
 // });
 
 
-
+// Json 
 // {
 //   "results": [
 //     {
@@ -230,9 +232,98 @@ console.log(instructor);    // hitesh
 // }
 //famous:   randomuserme api
 
-// Practice on above api...pending
+// store json into a object to perform action
 
-// json formatter tool to understand the json api--    https://jsonformatter.org/
+// Practice on your JSON data
+
+// Here’s how you can access values in your given JSON (example in JavaScript):
+const data = {
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Miss",
+        "first": "Jennie",
+        "last": "Nichols"
+      },
+      "location": {
+        "street": {
+          "number": 8929,
+          "name": "Valwood Pkwy",
+        },
+        "city": "Billings",
+        "state": "Michigan",
+        "country": "United States",
+        "postcode": "63104",
+        "coordinates": {
+          "latitude": "-69.8246",
+          "longitude": "134.8719"
+        },
+        "timezone": {
+          "offset": "+9:30",
+          "description": "Adelaide, Darwin"
+        }
+      },
+      "email": "jennie.nichols@example.com",
+      "login": {
+        "uuid": "7a0eed16-9430-4d68-901f-c0d4c1c3bf00",
+        "username": "yellowpeacock117",
+        "password": "addison",
+        "salt": "sld1yGtd",
+        "md5": "ab54ac4c0be9480ae8fa5e9e2a5196a3",
+        "sha1": "edcf2ce613cbdea349133c52dc2f3b83168dc51b",
+        "sha256": "48df5229235ada28389b91e60a935e4f9b73eb4bdb855ef9258a1751f10bdc5d"
+      },
+      "dob": {
+        "date": "1992-03-08T15:13:16.688Z",
+        "age": 30
+      },
+      "registered": {
+        "date": "2007-07-09T05:51:59.390Z",
+        "age": 14
+      },
+      "phone": "(272) 790-0888",
+      "cell": "(489) 330-2385",
+      "id": {
+        "name": "SSN",
+        "value": "405-88-3636"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/75.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/75.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+      },
+      "nat": "US"
+    }
+  ],
+  "info": {
+    "seed": "56d27f4a53bd5441",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
+
+// Practice on above api...pending
+// ✅ Accessing some values
+console.log(data.results[0].name.first);   // Jennie
+console.log(data.results[0].name.last);    // Nichols
+console.log(data.results[0].location.city); // Billings
+console.log(data.results[0].email);        // jennie.nichols@example.com
+console.log(data.results[0].dob.age);      // 30
+console.log(data.results[0].picture.large);// profile image URL
+
+
+// Mini Exercise (Try yourself)
+
+// Print the full name (title + first + last).
+
+// Print the latitude and longitude.
+
+// Print the seed from the info object.
+
+// Show the phone + email in one string.
+
 
 
 
@@ -282,4 +373,53 @@ console.log(instructor);    // hitesh
 //     "pincode": 560001
 //   }
 // }
+
+
+
+// Interview Question 
+
+// JSON vs JSON API
+// JSON
+
+// What it is: A data format (plain text) used for storing and exchanging data.
+
+// Example:
+
+// {
+//   "name": "Vinay",
+//   "age": 25,
+//   "isStudent": false
+// }
+
+// JSON API
+
+// What it is: A specification (standard) for how APIs should structure their requests and responses using JSON.
+
+// It defines rules like:
+
+// How to format resources (data, attributes, relationships).
+
+// How to include metadata, links, errors, pagination, etc.
+
+// It’s not just “any JSON” — it’s JSON with a strict structure designed for APIs.
+
+// Example (JSON:API response):
+
+// {
+//   "data": {
+//     "type": "users",
+//     "id": "1",
+//     "attributes": {
+//       "name": "Vinay",
+//       "age": 25
+//     }
+//   }
+// }
+
+
+// 👉 So:
+
+// JSON = format (like a language for data).
+
+// JSON API = standard that tells developers how to use JSON for REST APIs.
 // ==================################### JSON API     ####################################============================
