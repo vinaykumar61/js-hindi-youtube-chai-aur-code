@@ -206,6 +206,9 @@ function calculateCartPrice(num1){
 console.log(calculateCartPrice(200));   
 // ✅ Output: 200 (because you return the single argument directly).
 
+console.log(calculateCartPrice(600,700,900));   
+// ✅ Output: 600 (because you return the single argument directly).
+
 
 // Second function
 // ... rest operator when use in function as parameter
@@ -300,3 +303,37 @@ console.log(calculateCartPriceForMultipleInputs(200, 300, 400, 500));
 
 
 // 👉 Best practice is Option 1 (using rest/spread), because arguments is older and not as clean.
+
+const user = {
+  username: "Vinay Kumar",
+  price: 199
+}
+
+function handleObject(anyobject){
+  console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+
+
+// handleObject(user); // Username is Vinay Kumar and price is 199
+
+// OR we can pass an object in function as a parameter
+handleObject({
+  username: "Sam",
+  price: 7090
+})   // Username is Sam and price is 7090
+
+
+// OR we can pass an array in function as a parameter
+
+const myNewArray = [200, 400, 600, 800]
+
+function returnSecondValue(getArray){
+  return getArray[1]
+}
+
+// console.log(returnSecondValue(myNewArray)); // 400
+
+// OR
+
+console.log(returnSecondValue([200, 400, 600, 800])); // 400
